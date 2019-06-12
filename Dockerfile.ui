@@ -1,0 +1,8 @@
+FROM node:10-stretch
+WORKDIR /
+COPY package*.json ./
+RUN npm install
+COPY . .
+EXPOSE 7070
+# not using npm start to avoid prestart script
+CMD npx mastarm build --serve

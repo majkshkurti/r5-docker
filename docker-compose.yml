@@ -1,0 +1,43 @@
+version: '3'
+services:
+  mongodb:
+    container_name: mongo
+    image: mongo:4
+    restart: always
+    volumes:
+      - mongodb-volume:/data/db:rw
+
+  backend:
+    container_name: backend
+    # build:
+    #   context: ../analysis-backend/
+    #   dockerfile: ./Dockerfile.backend
+    image: analysis-backend:latest
+    depends_on:
+      - mongodb
+    environment:
+      # https://github.com/ufoscout/docker-compose-wait
+      WAIT_HOSTS: mongodb:27017
+    links:
+      - mongodb
+    ports:
+      - "9967:9967"
+    volumes:
+      - ./backend/analysis.properties:/app/analysis.properties:ro
+
+  ui:
+    container_name: ui
+    image: analysis-ui:latest
+    # build:
+    #   context: ../analysis-ui/
+    #   dockerfile: ./Dockerfile.ui
+    ports:
+      - "9966:9966"
+    links:
+      - backend
+    volumes:
+      - ./ui/env.yml:/configurations/default/env.yml:ro
+      - ./ui/settings.yml:/configurations/default/settings.yml:ro
+
+volumes:
+  mongodb-volume:
