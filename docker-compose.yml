@@ -12,7 +12,7 @@ services:
     # build:
     #   context: ../analysis-backend/
     #   dockerfile: ./Dockerfile.backend
-    image: analysis-backend:latest
+    image: brunetton/analysis-backend:dev
     depends_on:
       - mongodb
     environment:
@@ -27,7 +27,7 @@ services:
 
   ui:
     container_name: ui
-    image: analysis-ui:latest
+    image: brunetton/analysis-ui:dev
     # build:
     #   context: ../analysis-ui/
     #   dockerfile: ./Dockerfile.ui
