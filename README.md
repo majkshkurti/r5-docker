@@ -1,4 +1,11 @@
-## Run the image
+# Conveyal analysis Dockerisation
+
+This repo contains the dockerisation of [Conveyal analysis](https://www.conveyal.com/analysis/) software. This software is composed of two parts:
+
+- a [backend](https://github.com/conveyal/analysis-backend)
+- a [UI](https://github.com/conveyal/analysis-ui)
+
+## Run the stack
 
 - clone this repo
 - cd [the dir where you just clonse this repo]
@@ -7,7 +14,20 @@
 
 ## Make the images
 
+This is only needed to update backend and UI images; typically when a new version of the software is available.
+
+    # Clone repos, if needed
+    git clone [this repo]
+    git clone https://github.com/conveyal/analysis-backend
+    git clone https://github.com/conveyal/analysis-ui
+    # Rebuild backend image
+    cd analysis-backend
+    docker build -f ../analysis-backend/Dockerfile.backend -t analysis-backend .
+    cd ../
+    # Rebuild UI image
     cd analysis-ui
     docker build -f ../analysis-docker/Dockerfile.ui -t analysis-ui .
     cd ../
-    # to be continued ...
+    # Run the stack. You probably need to adapt images tags to use local ones
+    cd analysis-docker
+    docker-compose up
