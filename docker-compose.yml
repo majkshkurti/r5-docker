@@ -36,8 +36,8 @@ services:
     links:
       - backend
     volumes:
-      - ./ui/env.yml:/configurations/default/env.yml:ro
-      - ./ui/settings.yml:/configurations/default/settings.yml:ro
+      - ./ui/env.yml:/app/configurations/default/env.yml:ro
+      - ./ui/settings.yml:/app/configurations/default/settings.yml:ro
 
 volumes:
   mongodb-volume:
