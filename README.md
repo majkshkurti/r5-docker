@@ -22,11 +22,11 @@ This is only needed to update backend and UI images; typically when a new versio
     git clone https://github.com/conveyal/analysis-ui
     # Rebuild backend image
     cd analysis-backend
-    docker build -f ../analysis-backend/Dockerfile.backend -t analysis-backend .
+    docker build -f ../analysis-docker/backend/Dockerfile -t analysis-backend .
     cd ../
     # Rebuild UI image
     cd analysis-ui
-    docker build -f ../analysis-docker/Dockerfile.ui -t analysis-ui .
+    docker build -f ../analysis-docker/ui/Dockerfile.ui -t analysis-ui .
     cd ../
     # Run the stack. You probably need to adapt images tags to use local ones
     cd analysis-docker
