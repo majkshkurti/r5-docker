@@ -9,7 +9,7 @@ services:
 
   backend:
     container_name: backend
-    image: brunetton/analysis-backend:latest
+    image: jailbreakparis/analysis-backend:latest
     depends_on:
       - mongodb
     environment:
@@ -24,7 +24,7 @@ services:
 
   ui:
     container_name: ui
-    image: brunetton/analysis-ui:latest
+    image: jailbreakparis/analysis-ui:latest
     ports:
       - "9966:9966"
     links:
