@@ -9,10 +9,7 @@ services:
 
   backend:
     container_name: backend
-    # build:
-    #   context: ../analysis-backend/
-    #   dockerfile: ./Dockerfile.backend
-    image: brunetton/analysis-backend:dev
+    image: brunetton/analysis-backend:latest
     depends_on:
       - mongodb
     environment:
@@ -27,10 +24,7 @@ services:
 
   ui:
     container_name: ui
-    image: brunetton/analysis-ui:dev
-    # build:
-    #   context: ../analysis-ui/
-    #   dockerfile: ./Dockerfile.ui
+    image: brunetton/analysis-ui:latest
     ports:
       - "9966:9966"
     links:
