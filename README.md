@@ -23,6 +23,9 @@ This is only needed to update backend and UI images; typically when a new versio
     # Rebuild backend image
     cd analysis-backend
     git reset --hard <version>  # replace <version> by something like v5.4.0
+    rm -f target/*.jar
+    ## Start a Mongo server then
+    mvn package  # this will generate target/analisys.jar file
     docker build -f ../analysis-docker/backend/Dockerfile -t analysis-backend .
     cd ../
     # Rebuild UI image
