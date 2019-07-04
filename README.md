@@ -1,8 +1,6 @@
 # conveyal-analysis-docker
 
-This repository will help you easily install [Conveyal Analysis](https://www.conveyal.com/analysis/)  on any modern operating system, using [Docker](docker.com).
-
-This "dockerisation" of Conveyal Analysis  was made possible by [Jailbreak](http://jailbreak.paris/) as part of the [Digital Transport for Africa project](http://digitaltransport4africa.org/) funded by [Agence française de développement](https://www.afd.fr/).
+Easily install Conveyal Analysis on any modern operating system, using Docker.
 
 ## Presentation
 
@@ -10,9 +8,7 @@ This "dockerisation" of Conveyal Analysis  was made possible by [Jailbreak](http
 
 [Docker](docker.com) is a tool to run a program in a self-contained container which will work on any operating system.
 
-This repo contains the Dockerfiles of [Conveyal Analysis](https://www.conveyal.com/analysis/), which is composed of two parts:
-- a [backend](https://github.com/conveyal/analysis-backend)
-- a [UI](https://github.com/conveyal/analysis-ui)
+This "dockerisation" of Conveyal Analysis was made possible by [Jailbreak](http://jailbreak.paris/) as part of the [Digital Transport for Africa project](http://digitaltransport4africa.org/) funded by [Agence française de développement](https://www.afd.fr/).
 
 ## Run on your system
 
@@ -27,8 +23,11 @@ docker-compose up
 ```
 Then navigate to [http://localhost:9966/](http://localhost:9966/)
 
-
 ## Build images
+
+This repo contains the Dockerfiles of [Conveyal Analysis](https://www.conveyal.com/analysis/), which is composed of two parts:
+- a [backend](https://github.com/conveyal/analysis-backend)
+- a [UI](https://github.com/conveyal/analysis-ui)
 
 Docker images are hosted on Docker Hub:
 - [`analysis-ui`](https://cloud.docker.com/u/jailbreakparis/repository/docker/jailbreakparis/analysis-ui)
