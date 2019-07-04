@@ -1,38 +1,69 @@
-# Conveyal analysis Dockerisation
+# conveyal-analysis-docker
 
-This repo contains the dockerisation of [Conveyal analysis](https://www.conveyal.com/analysis/) software. This software is composed of two parts:
+This repository will help you easily install [Conveyal Analysis](https://www.conveyal.com/analysis/)  on any modern operating system, using [Docker](docker.com).
 
+This "dockerisation" of Conveyal Analysis  was made possible by [Jailbreak](http://jailbreak.paris/) as part of the [Digital Transport for Africa project](http://digitaltransport4africa.org/) funded by [Agence française de développement](https://www.afd.fr/).
+
+## Presentation
+
+[Conveyal Analysis](https://www.conveyal.com/analysis/) is a tool used to make public transport scenarios and evaluate them in terms of accessibility, using [OpenStreetMap](http://openstreetmap.org/) data and [GTFS datasets](https://git.digitaltransport4africa.org/data).
+
+[Docker](docker.com) is a tool to run a program in a self-contained container which will work on any operating system.
+
+This repo contains the Dockerfiles of [Conveyal Analysis](https://www.conveyal.com/analysis/), which is composed of two parts:
 - a [backend](https://github.com/conveyal/analysis-backend)
 - a [UI](https://github.com/conveyal/analysis-ui)
 
-## Run the stack
+## Run on your system
 
-- clone this repo
-- cd [the dir where you just clonse this repo]
-- `docker-compose up`
-- navigate to `http://localhost:9966/`
+### See [the complete installation guide](/INSTALL.md)
 
-## Make the images
+Quickstart:
 
-This is only needed to update backend and UI images; typically when a new version of the software is available.
+```
+git clone https://git.digitaltransport4africa.org/commons/conveyal-analysis-docker.git
+cd conveyal-analysis-docker
+docker-compose up
+```
+Then navigate to [http://localhost:9966/](http://localhost:9966/)
 
-    # Clone repos, if needed
-    git clone [this repo]
-    git clone https://github.com/conveyal/analysis-backend
-    git clone https://github.com/conveyal/analysis-ui
-    # Rebuild backend image
-    cd analysis-backend
-    git reset --hard <version>  # replace <version> by something like v5.4.0
-    rm -f target/*.jar
-    ## Start a Mongo server then
-    mvn package  # this will generate target/analisys.jar file
-    docker build -f ../analysis-docker/backend/Dockerfile -t analysis-backend .
-    cd ../
-    # Rebuild UI image
-    cd analysis-ui
-    git reset --hard <version>  # replace <version> by something like v4.7.0
-    docker build -f ../analysis-docker/ui/Dockerfile -t analysis-ui .
-    cd ../
-    # Run the stack. You probably need to adapt images tags to use local ones
-    cd analysis-docker
-    docker-compose up
+
+## Build images
+
+Docker images are hosted on Docker Hub:
+- [`analysis-ui`](https://cloud.docker.com/u/jailbreakparis/repository/docker/jailbreakparis/analysis-ui)
+- [`analysis-backend`](https://cloud.docker.com/u/jailbreakparis/repository/docker/jailbreakparis/analysis-backend)
+
+The following guide is to create new images, typically when a new version of the software is available:
+
+1. Clone the repos
+```
+git clone https://git.digitaltransport4africa.org/commons/conveyal-analysis-docker.git
+git clone https://github.com/conveyal/analysis-backend
+git clone https://github.com/conveyal/analysis-ui
+```
+2. Rebuild backend image
+```
+cd analysis-backend
+git reset --hard <version>  # replace <version> by something like v5.4.0
+rm -f target/*.jar
+```
+3. Start a Mongo server then
+```
+mvn package  # this will generate target/analisys.jar file
+docker build -f ../analysis-docker/backend/Dockerfile -t analysis-backend .
+cd ../
+```
+4. Rebuild UI image
+```
+cd analysis-ui
+git reset --hard <version>  # replace <version> by something like v4.7.0
+docker build -f ../analysis-docker/ui/Dockerfile -t analysis-ui .
+cd ../
+```
+5. Run the stack. You probably need to adapt
+images tags to use local ones
+```
+cd conveyal-analysis-docker
+docker-compose up
+```
