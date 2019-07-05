@@ -1,6 +1,6 @@
 # conveyal-analysis-docker
 
-Easily install Conveyal Analysis on any modern operating system, using Docker.
+Quick and easy install of Conveyal Analysis on any modern operating system, using Docker.
 
 ## Presentation
 
@@ -12,7 +12,7 @@ This "dockerisation" of Conveyal Analysis was made possible by [Jailbreak](http:
 
 ## Run on your system
 
-### See [the complete installation guide](/INSTALL.md)
+### 👉 _See [the complete installation guide](/INSTALL.md)_ 
 
 Quickstart:
 
