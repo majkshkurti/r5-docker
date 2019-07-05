@@ -51,9 +51,9 @@ Note: You need Docker Desktop for Windows to install and run Conveyal Analysis u
 
 You can now double-click on `conveyal-analysis-windows.bat` to start Conveyal Analysis again, and anytime you want. (It will be quicker this time since everything is already installed.)
 
-After it's started, don't forget to open Conveyal Analysis in your broswer by [clicking here](http://localhost:9966/)!
+After it's started, don't forget to open Conveyal Analysis in your browser by [clicking here](http://localhost:9966/)!
 
-Note: Always make sure that Docker is running first (the whale logo in the taskbar).
+Note: Always make sure that Docker is running first (the whale logo in the status bar).
 
 For ease of use, we recommend that you create a shortcut on your Windows desktop: right-click on `conveyal-analysis-windows.bat` and click on Send to > Desktop. We also recommend that you bookmark Conveyal Aanlysis in your browser (http://localhost:9966/).
 
