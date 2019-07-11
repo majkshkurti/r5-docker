@@ -12,7 +12,7 @@ This "dockerisation" of Conveyal Analysis was made possible by [Jailbreak](http:
 
 ## Run on your system
 
-### 👉 _See [the complete installation guide](/INSTALL.md)_ 
+👉 _See [the complete installation guide](/INSTALL.md)_ 
 
 Quickstart:
 
