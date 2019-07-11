@@ -26,15 +26,15 @@ This guide will help you install Conveyal Analysis using Docker.
 
 If you successfully installed the app, a popup will appear:
 
-![](/doc-assets/docker-app-welcome.png)
+![](./doc-assets/docker-app-welcome.png)
 
 4. Open Docker Desktop for Windows via the Windows start menu:
 
-![](/doc-assets/docker-app-search.png)
+![](./doc-assets/docker-app-search.png)
 
 5. The Docker whale logo must be present in the status bar:
 
-![](/doc-assets/whale-icon-systray.png)
+![](./doc-assets/whale-icon-systray.png)
 
 Note: You need Docker Desktop for Windows to install and run Conveyal Analysis using the method explained in this guide. You can close Docker Desktop for Windows the rest of the time, or even uninstall it when you don't need it anymore.
 
@@ -46,7 +46,7 @@ Note: You need Docker Desktop for Windows to install and run Conveyal Analysis u
 
 3. Once it's unzipped, rename the folder to `conveyal-analysis-docker` or something convenient but without spaces in the name. All files should be contained directly within this folder:
 
-![](/doc-assets/files.png)
+![](./doc-assets/files.png)
 
 4. Double-click on `conveyal-analysis-windows.bat` and let the program do its thing. This will download and install Conveyal Analysis for the first time on your computer. This may take a while. Closing the windows before it's finished will interrupt the installation.
 
