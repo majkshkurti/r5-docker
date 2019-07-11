@@ -4,12 +4,19 @@ This guide will help you install Conveyal Analysis using Docker.
 
 **If you run into any problem, please [send us an email](mailto:johan.richer@jailbreak.paris?subject=Problem%20with%20conveyal-analysis-docker) or create a [new issue ticket](https://git.digitaltransport4africa.org/commons/conveyal-analysis-docker/issues/new).**
 
+## Requirements
+
+### Operating system
+- [Docker Desktop for Windows](https://docs.docker.com/docker-for-windows/) requires Microsoft Windows 10 Professional or Enterprise 64-bit.
+- [Docker Desktop for Mac](https://docs.docker.com/docker-for-mac/) requires macOS Sierra 10.12 and newer.
+- [Docker CE](https://docs.docker.com/install/) is available on many other platforms such as [Ubuntu Linux](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-docker-ce).
+
+### Browser
+- Conveyal Analysis is a tool which runs on your browser. We recommend that you use [Mozilla Firefox](https://www.mozilla.org/firefox/) or [Google Chrome](https://www.google.com/chrome/) for better usability.
+
 ## Windows
 
 ### Install Docker on your computer
-
-Note: Docker Desktop for Windows requires Microsoft Windows 10 Professional or Enterprise 64-bit.
-Conveyal Analysis is a tool which runs on your browser. We recommend that you use [Mozilla Firefox](https://www.mozilla.org/firefox/) or [Google Chrome](https://www.google.com/chrome/) for better usability.
 
 1. [Click here](https://download.docker.com/win/stable/Docker%20for%20Windows%20Installer.exe) to download Docker Desktop for Windows.
 
