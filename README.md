@@ -26,7 +26,7 @@ docker-compose up
 ```
 Then navigate to [http://localhost:9966/](http://localhost:9966/)
 
-## Build images
+## Build images (⚠ only for developers)
 
 This repo contains the Dockerfiles of [Conveyal Analysis](https://www.conveyal.com/analysis/), which is composed of two parts:
 - a [backend](https://github.com/conveyal/analysis-backend)
@@ -50,17 +50,17 @@ cd analysis-backend
 git reset --hard <version>  # replace <version> by something like v5.4.0
 rm -f target/*.jar
 ```
-3. Start a Mongo server then
+3. Start a Mongo server, then
 ```
 mvn package  # this will generate target/analisys.jar file
-docker build -f ../analysis-docker/backend/Dockerfile -t analysis-backend .
+docker build -f ../conveyal-analysis-docker/backend/Dockerfile -t analysis-backend .
 cd ../
 ```
 4. Rebuild UI image
 ```
 cd analysis-ui
 git reset --hard <version>  # replace <version> by something like v4.7.0
-docker build -f ../analysis-docker/ui/Dockerfile -t analysis-ui .
+docker build -f ../conveyal-analysis-docker/ui/Dockerfile -t analysis-ui .
 cd ../
 ```
 5. Run the stack. You probably need to adapt

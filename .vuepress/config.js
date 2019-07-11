@@ -6,7 +6,7 @@ module.exports = {
     themeConfig: {
         sidebar: [
         '/',
-        ['/INSTALL', '🇬🇧 Installation guide']
+        '/INSTALL'
         ],
         displayAllHeaders: true,
         sidebarDepth: 2,

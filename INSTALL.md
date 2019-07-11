@@ -1,4 +1,4 @@
-# Installation (English)
+# 🇬🇧 Installation guide
 
 This guide will help you install Conveyal Analysis using Docker.
 
