@@ -33,8 +33,8 @@ This repo contains the Dockerfiles of [Conveyal Analysis](https://www.conveyal.c
 - a [UI](https://github.com/conveyal/analysis-ui)
 
 Docker images are hosted on Docker Hub:
-- [`analysis-ui`](https://cloud.docker.com/u/jailbreakparis/repository/docker/jailbreakparis/analysis-ui)
-- [`analysis-backend`](https://cloud.docker.com/u/jailbreakparis/repository/docker/jailbreakparis/analysis-backend)
+- [`analysis-ui`](https://hub.docker.com/r/jailbreakparis/analysis-ui)
+- [`analysis-backend`](https://hub.docker.com/r/jailbreakparis/analysis-backend)
 
 The following guide is to create new images, typically when a new version of the software is available:
 
