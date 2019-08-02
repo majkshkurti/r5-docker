@@ -12,7 +12,7 @@ This guide will help you install Conveyal Analysis using Docker.
 - [Docker CE](https://docs.docker.com/install/) is available on many other platforms such as [Ubuntu Linux](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-docker-ce).
 
 ### Browser
-- Conveyal Analysis is a tool which runs on your browser. We recommend that you use [Mozilla Firefox](https://www.mozilla.org/firefox/) or [Google Chrome](https://www.google.com/chrome/) for better usability.
+- Conveyal Analysis is a tool which runs in your browser. We recommend that you use [Mozilla Firefox](https://www.mozilla.org/firefox/) or [Google Chrome](https://www.google.com/chrome/) for better usability.
 
 ## Windows
 
