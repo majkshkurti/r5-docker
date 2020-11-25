@@ -9,7 +9,8 @@ services:
 
   backend:
     container_name: backend
-    image: jailbreakparis/analysis-backend:latest
+    # image: jailbreakparis/analysis-backend:latest
+    image: analysis-backend:latest
     depends_on:
       - mongodb
     environment:
@@ -18,20 +19,20 @@ services:
     links:
       - mongodb
     ports:
-      - "9967:9967"
+      - "7070:7070"
     volumes:
       - ./backend/analysis.properties:/app/analysis.properties:ro
 
   ui:
     container_name: ui
-    image: jailbreakparis/analysis-ui:latest
+    # image: jailbreakparis/analysis-ui:latest
+    image: analysis-ui:latest
     ports:
-      - "9966:9966"
+      - "3000:3000"
     links:
       - backend
-    volumes:
-      - ./ui/env.yml:/app/configurations/default/env.yml:ro
-      - ./ui/settings.yml:/app/configurations/default/settings.yml:ro
+    # volumes:
+    #   - ./ui/settings.yml:/app/configurations/default/settings.yml:ro
 
 volumes:
   mongodb-volume:
