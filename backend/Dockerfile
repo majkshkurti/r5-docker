@@ -2,21 +2,24 @@
 # Usage:
 #   docker build . --build-arg r5version=$VERSION
 
+# FROM openjdk:11-slim
 FROM openjdk:11
 
 ARG r5version
 # Check that r5version arg have been provided
 RUN test -n $r5version
 
-EXPOSE 7070
-ENV JVM_HEAP_GB=2
 
 WORKDIR /r5
-COPY build/libs/r5-$r5version-all.jar .
-COPY analysis.properties.docker analysis.properties
-
-## Add wait tool, to wait for Mongo to be up
+# Add wait tool, to wait for Mongo to be up
 ADD https://github.com/ufoscout/docker-compose-wait/releases/download/2.7.3/wait /wait
 RUN chmod +x /wait
 
-CMD /wait && java -Xmx${JVM_HEAP_GB}g -cp r5-$r5version-all.jar com.conveyal.analysis.BackendMain
+COPY r5.jar .
+COPY analysis.properties.docker analysis.properties
+
+# Assert that file to run actually exists (as java won't explicitly ecpress the error)
+RUN test -e r5.jar
+EXPOSE 7070
+ENV JVM_HEAP_GB=2
+CMD /wait && java -Xmx${JVM_HEAP_GB}g -cp r5.jar com.conveyal.analysis.BackendMain
