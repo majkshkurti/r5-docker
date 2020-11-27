@@ -27,6 +27,8 @@ services:
     container_name: ui
     # image: jailbreakparis/analysis-ui:latest
     image: analysis-ui:latest
+    depends_on:
+      - backend
     ports:
       - "3000:3000"
     links:
