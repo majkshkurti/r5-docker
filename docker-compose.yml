@@ -31,8 +31,8 @@ services:
       - "3000:3000"
     links:
       - backend
-    # volumes:
-    #   - ./ui/settings.yml:/app/configurations/default/settings.yml:ro
+    volumes:   # (paths relative to the Compose file)
+      - .env:/app/.env:ro
 
 volumes:
   mongodb-volume:

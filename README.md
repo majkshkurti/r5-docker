@@ -35,13 +35,17 @@ Docker images are hosted on Docker Hub:
 
 The following guide is to create new images, typically when a new version of the software is available:
 
-1. Clone the repos
-npm run build:latest
+### 1. Clone the repos
+
+```
+git clone https://github.com/conveyal/r5
+git clone https://github.com/conveyal/analysis-ui
+git clone https://git.digitaltransport4africa.org/commons/conveyal-analysis-docker.git
 ```
 
-2. Build backend (r5) image
+### 2. Build backend (r5) image
 
-2.1. Get fresh Gradle version
+#### 2.1. Get fresh Gradle version
 
 (6.7.1 in this example, but you may adapt)
 
@@ -50,23 +54,22 @@ wget https://services.gradle.org/distributions/gradle-6.7.1-bin.zip
 unzip gradle-6.7.1-bin.zip
 ```
 
-2.2 Use gradle to build r5
+#### 2.2 Use gradle to build r5
 
 ```
 cd r5
 ln -s ../gradle/gradle-6.7.1/bin/gradle .
-./gradle -x test runBackend
 cp analysis.properties.docker analysis.properties
 ```
 
-2.3 Build r5 jar image
+#### 2.3 Build r5 jar image
 
 ```
 ./gradle shadowJar   # this will generate build/libs/r5-[version_number].jar file
 ln -s build/libs/r5-*.jar r5.jar
 ```
 
-2.4 Build Docker r5 image
+#### 2.4 Build Docker r5 image
 
 ```
 # Determine current r5 version
@@ -77,14 +80,14 @@ docker build -f ../conveyal-analysis-docker/backend/Dockerfile -t analysis-backe
 docker tag analysis-backend:${VERSION%.dirty} analysis-backend:latest
 ```
 
-4. Build UI image
+### 4. Build UI image
 ```
 cd analysis-ui
 docker build -f ../conveyal-analysis-docker/ui/Dockerfile -t analysis-ui:latest .
 cd ../
 ```
 
-5. Run the stack
+### 5. Run the stack
 
 You'll probably need to adapt images tags to use local ones
 
