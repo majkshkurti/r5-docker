@@ -10,7 +10,7 @@ WORKDIR /app
 
 # Clone the source code wuthout all history, then reset to COMMIT_SHA
 RUN git clone https://github.com/conveyal/analysis-ui .
-RUN git reset --hard $commit_sha
+RUN git reset --hard 3071865ccf01
 
 # Copy .env file that can contain Mapbox API key
 COPY ui/.env .
