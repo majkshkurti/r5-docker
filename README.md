@@ -38,9 +38,9 @@ The following guide is to create new images, typically when a new version of the
 ### 1. Clone the repos
 
 ```
-git clone https://github.com/conveyal/r5
-git clone https://github.com/conveyal/analysis-ui
-git clone https://git.digitaltransport4africa.org/commons/conveyal-analysis-docker.git
+git clone --depth=1 https://github.com/conveyal/r5
+git clone --depth=1 https://github.com/conveyal/analysis-ui
+git clone --depth=1 https://git.digitaltransport4africa.org/commons/conveyal-analysis-docker.git
 ```
 
 ### 2. Build backend (r5) image
@@ -81,8 +81,14 @@ docker tag analysis-backend:${VERSION%.dirty} analysis-backend:latest
 ```
 
 ### 4. Build UI image
+
+This process needs approx 5Go of free space
+
 ```
+cp conveyal-analysis-docker/ui/.env analysis-ui
 cd analysis-ui
+# If you want to customize Mapbox API token you can edit .env file and set NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN
+# in that case you'll also need to remove the line that sets this variable in ../conveyal-analysis-docker/ui/Dockerfile
 docker build -f ../conveyal-analysis-docker/ui/Dockerfile -t analysis-ui:latest .
 cd ../
 ```
@@ -94,4 +100,14 @@ You'll probably need to adapt images tags to use local ones
 ```
 cd conveyal-analysis-docker
 docker-compose up
+```
+
+The app is then available at `http://localhost:3000`
+
+#### Optional: save disk space
+
+You can potentially same a lot of disk space by removing temporary Docker images used to build (but not needed anymore now that images are built):
+
+```
+docker system prune --force
 ```

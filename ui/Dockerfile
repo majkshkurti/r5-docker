@@ -1,11 +1,11 @@
+# Please read README.txt for prerequisites before using this Dockerfile
+
 # Build ───────────────────────────────────────────────────────────────────────
 FROM node:12 as build
 
 WORKDIR /app
-COPY package.json yarn.lock /app/
-RUN yarn install
-
 COPY . /app
+RUN yarn install
 RUN yarn build
 
 
@@ -21,13 +21,6 @@ RUN yarn add next
 FROM node:12-alpine3.12
 
 WORKDIR /app
-
-# app specific
-ENV MONGODB_URL=mongodb://mongodb:27017/analysis
-ENV NEXT_PUBLIC_ADMIN_ACCESS_GROUP=local
-ENV NEXT_PUBLIC_API_URL=http://backend:7070
-ENV NEXT_PUBLIC_AUTH_DISABLED=true
-ENV NEXT_PUBLIC_MAPBOX_STYLE=mapbox/light-v10
 
 COPY --from=build /app/next.config.js .
 COPY --from=build /app/.next .next
