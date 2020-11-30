@@ -1,10 +1,20 @@
 # Please read README.txt for prerequisites before using this Dockerfile
 
+# Git commit to use
+ARG commit_sha=3071865ccf01
+
 # Build ───────────────────────────────────────────────────────────────────────
 FROM node:12 as build
 
 WORKDIR /app
-COPY . /app
+
+# Clone the source code wuthout all history, then reset to COMMIT_SHA
+RUN git clone https://github.com/conveyal/analysis-ui .
+RUN git reset --hard $commit_sha
+
+# Copy .env file that can contain Mapbox API key
+COPY ui/.env .
+
 RUN yarn install
 RUN yarn build
 
