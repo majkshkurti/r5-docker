@@ -82,10 +82,11 @@ docker tag analysis-backend:${VERSION%.dirty} analysis-backend:latest
 
 ### 4. Build UI image
 
-This process needs approx 5Go of free space
+This process needs approx 5Go of free space and have been tested with version 3071865ccf01 of UI. If you encounter problems, you can try to re-clone the repo without `--depth` option, and reset to this particular commit: `git reset --hard 3071865ccf01`.
 
 ```
-cp conveyal-analysis-docker/ui/.env analysis-ui
+cd  [the directory where you cloned all the repos, ie the directory at step 1]
+cp conveyal-analysis-docker/ui/.env analysis-ui/
 cd analysis-ui
 # If you want to customize Mapbox API token you can edit .env file and set NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN
 # in that case you'll also need to remove the line that sets this variable in ../conveyal-analysis-docker/ui/Dockerfile
