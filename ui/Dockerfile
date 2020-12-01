@@ -1,16 +1,18 @@
 # Please read README.txt for prerequisites before using this Dockerfile
 
 # Git commit to use
-ARG commit_sha=3071865ccf01
+ARG COMMIT_SHA=3071865ccf01
 
 # Build ───────────────────────────────────────────────────────────────────────
 FROM node:12 as build
 
 WORKDIR /app
 
+# Tell Docker that we will use COMMIT_SHA in this layer
+ARG COMMIT_SHA
 # Clone the source code wuthout all history, then reset to COMMIT_SHA
 RUN git clone https://github.com/conveyal/analysis-ui .
-RUN git reset --hard 3071865ccf01
+RUN git reset --hard ${COMMIT_SHA}
 
 # Copy .env file that can contain Mapbox API key
 COPY ui/.env .
