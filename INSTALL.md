@@ -70,7 +70,7 @@ In case of a Windows Security Alert about Docker, click "Allow access":
 
 ### Launch Conveyal Analysis
 
-Ater Conveyal Analysis is installed, just double-click on `launch.bat` to start it again, and anytime you want. (It will be quicker this time since everything is already installed.)
+After Conveyal Analysis is installed, just double-click on `launch.bat` to start it again, and anytime you want. (It will be quicker this time since everything is already installed.)
 
 After it's started, don't forget to open Conveyal Analysis in your browser by [clicking here](http://localhost:3000/)!
 
@@ -80,7 +80,7 @@ For ease of use, we recommend that you create a shortcut on your Windows desktop
 
 ### Stop Conveyal Analysis
 
-Closing the Conveyal Analysis tab in your browser or the terminal window won't actually stop the application, which will continue running in the background. This can unnecessarily use up your computer resources and we recommend that you stop Conveyal Analysis when you're not using it.
+Closing the Conveyal Analysis tab in your browser or the terminal window won't actually stop the application, which will continue to run in the background. This can unnecessarily use up your computer resources and we recommend that you stop Conveyal Analysis when you're not using it.
 
 1. Open Docker Desktop.
 2. Hover your mouse over `conveyal-analysis-docker`, you will see icons appear on the right.
@@ -88,9 +88,9 @@ Closing the Conveyal Analysis tab in your browser or the terminal window won't a
 
 If you want to start Conveyal Analysis again, just use your shorcut or double-click on `launch.bat` as you did before.
 
-### Configure the Mapbox Token
+### Configure the Mapbox token
 
-Conveyal Analysis uses a basemap to help you navigate the geography and interact with your projects. This basemap is provided by Mapbox and works only if you have a valid token. By default, we configured a demo token from Mapbox to enable you to try Conveyal Analysis. We can't guarantee this token to be active forever which means that the basemap might stop working at any time. If you want to fix this and durably use Conveyal Analysis, you should configure your own Mapbox Token. Here's how you do it:
+Conveyal Analysis uses a basemap to help you navigate the geography and interact with your projects. This basemap is provided by a third party service, [Mapbox](https://mapbox.com/), and works only if you have a valid *token*, which is a personal key. By default, we configured a demo token from Mapbox to enable you to try Conveyal Analysis. We can't guarantee this token to work forever which means that the basemap might stop working at any time. If you want to fix this and durably use Conveyal Analysis, you should configure your own Mapbox token. Here's how you do it:
 
 First you need to obtain a personal public Mapbox token:
 
