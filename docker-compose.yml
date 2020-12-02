@@ -9,7 +9,7 @@ services:
 
   backend:
     container_name: backend
-    image: jailbreakparis/analysis-backend:latest
+    image: jailbreakparis/r5:latest
     depends_on:
       - mongodb
     environment:

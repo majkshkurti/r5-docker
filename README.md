@@ -5,7 +5,6 @@ Quick and easy install of Conveyal Analysis on any modern operating system, usin
 **Documentation**: [commons.digitaltransport.io/conveyal-analysis-docker/](http://commons.digitaltransport.io/conveyal-analysis-docke:latestr/)
 
 ## Presentation
-npm run build:latest
 
 [Docker](docker.com) is a tool to run a program in a self-contained container which will work on any operating system.
 
@@ -18,20 +17,21 @@ This "dockerisation" of Conveyal Analysis was made possible by [Jailbreak](http:
 Quickstart:
 
 ```
-cd conveyal-analysis:latest-docker
+git clone https://git.digitaltransport4africa.org/commons/conveyal-analysis-docker.git
+cd conveyal-analysis-docker
 docker-compose up
 ```
-Then navigate to [http://localhost:9966/](http://localhost:9966/)
+Then navigate to [http://localhost:3000/](http://localhost:3000/)
 
 ## Build images (⚠ only for developers)
 
 This repo contains the Dockerfiles of [Conveyal Analysis](https://www.conveyal.com/analysis/), which is composed of two parts:
-- a [backend](https://github.com/conveyal/analysis-backend)
+- a [backend](https://github.com/conveyal/r5)
 - a [UI](https://github.com/conveyal/analysis-ui)
 
 Docker images are hosted on Docker Hub:
+- [`r5`](https://hub.docker.com/r/jailbreakparis/r5)
 - [`analysis-ui`](https://hub.docker.com/r/jailbreakparis/analysis-ui)
-- [`analysis-backend`](https://hub.docker.com/r/jailbreakparis/analysis-backend)
 
 The following guide is to create new images, typically when a new version of the software is available:
 
