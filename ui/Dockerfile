@@ -40,6 +40,8 @@ COPY --from=build /app/public public
 
 COPY --from=next /app/node_modules node_modules
 
+COPY ui/.env .env.local
+
 RUN addgroup -g 1001 -S nodejs \
   && adduser -S nextjs -u 1001
 
