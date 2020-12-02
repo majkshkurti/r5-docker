@@ -7,20 +7,30 @@ This guide will help you install Conveyal Analysis using Docker.
 ## Requirements
 
 ### Operating system
-- [Docker Desktop for Windows](https://docs.docker.com/docker-for-windows/) requires Microsoft Windows 10 Professional or Enterprise 64-bit.
-- [Docker Desktop for Mac](https://docs.docker.com/docker-for-mac/) requires macOS Sierra 10.12 and newer.
-- [Docker CE](https://docs.docker.com/install/) is available on many other platforms such as [Ubuntu Linux](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-docker-ce).
+
+#### Windows
+
+[Docker Desktop](https://www.docker.com/products/docker-desktop/) requires [Microsoft Windows 10 64-bit Pro, Enterprise, or Education](https://docs.docker.com/docker-for-windows/install/#system-requirements). ([Windows Home has specific instructions](https://docs.docker.com/docker-for-windows/install-windows-home/).)
+
+#### macOS
+
+[Docker Desktop](https://www.docker.com/products/docker-desktop/) requires [Apple macOS 10.14 or newer](https://docs.docker.com/docker-for-mac/install/#system-requirements).
+
+#### Linux
+
+[Docker Engine](https://docs.docker.com/engine/install/) is available on many other platforms such as [Ubuntu Linux](https://docs.docker.com/engine/install/ubuntu/).
 
 ### Browser
-- Conveyal Analysis is a tool which runs in your browser. We recommend that you use [Mozilla Firefox](https://www.mozilla.org/firefox/) or [Google Chrome](https://www.google.com/chrome/) for better usability.
+
+Conveyal Analysis is a tool which runs in your browser. We recommend that you use [Mozilla Firefox](https://www.mozilla.org/firefox/) or [Google Chrome](https://www.google.com/chrome/) for better usability.
 
 ## Windows
 
 ### Install Docker on your computer
 
-1. [Click here](https://download.docker.com/win/stable/Docker%20for%20Windows%20Installer.exe) to download Docker Desktop for Windows.
+1. [Click here](https://desktop.docker.com/win/stable/Docker%20Desktop%20Installer.exe) to download Docker Desktop for Windows.
 
-2. Go to the Downloads folder and double-click `Docker Desktop for Windows Installer.exe` to run the installer.
+2. Go to the Downloads folder and double-click `Docker Desktop Installer.exe` to run the installer.
 
 3. Follow the install wizard to accept the license, authorize the installer, and proceed with the install until it is completed successfully and the setup dialog closes.
 
