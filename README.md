@@ -29,10 +29,10 @@ Then navigate to [http://localhost:3000/](http://localhost:3000/)
 ## Build images (⚠ only for developers)
 
 This repo contains the Dockerfiles of [Conveyal Analysis](https://www.conveyal.com/analysis/), which is composed of two parts:
-- a [backend](https://github.com/conveyal/r5)
-- a [UI](https://github.com/conveyal/analysis-ui)
+- [R5](https://github.com/conveyal/r5): a routing engine which acts as the backend
+- [Analysis UI](https://github.com/conveyal/analysis-ui): the user interface
 
-Docker images are hosted on Docker Hub:
+Docker images built by Jailbreak are hosted on Docker Hub:
 - [`r5`](https://hub.docker.com/r/jailbreakparis/r5)
 - [`analysis-ui`](https://hub.docker.com/r/jailbreakparis/analysis-ui)
 
@@ -41,14 +41,14 @@ The following guide is to create new images, typically when a new version of the
 ### 1. Clone the repos
 
 ```
-git clone --depth=1 https://github.com/conveyal/r5
-git clone --depth=1 https://github.com/conveyal/analysis-ui
-git clone --depth=1 https://git.digitaltransport4africa.org/commons/conveyal-analysis-docker.git
+git clone https://github.com/conveyal/r5
+git clone https://github.com/conveyal/analysis-ui
+git clone https://git.digitaltransport4africa.org/commons/conveyal-analysis-docker.git
 ```
 
-### 2. Build backend (r5) image
+### 2. Build the R5 image
 
-#### 2.1. Get fresh Gradle version
+#### 2.1. Get a fresh version of Gradle
 
 (6.7.1 in this example, but you may adapt)
 
@@ -68,14 +68,14 @@ cp analysis.properties.docker analysis.properties
 #### 2.3 Build r5 jar image
 
 ```
-./gradle shadowJar   # this will generate build/libs/r5-[version_number].jar file
+./gradle shadowJar # this will generate build/libs/r5-[version_number].jar file
 ln -s build/libs/r5-*.jar r5.jar
 ```
 
 #### 2.4 Build Docker r5 image
 
 ```
-# Determine current r5 version
+# Determine the current r5 version
 VERSION=$(cat build/version.txt)
 # Build Docker image
 docker build -f ../conveyal-analysis-docker/backend/Dockerfile -t analysis-backend:${VERSION%.dirty} --build-arg r5version=$VERSION .
@@ -83,15 +83,15 @@ docker build -f ../conveyal-analysis-docker/backend/Dockerfile -t analysis-backe
 docker tag analysis-backend:${VERSION%.dirty} jailbreakparis/analysis-backend:latest
 ```
 
-### 4. Build UI image
+### 4. Build the Analysis UI image
 
-This process needs approx 5Go of free space and have been tested with version 3071865ccf01 of UI. If you encounter problems, you can try to re-clone the repo without `--depth` option, and reset to this particular commit: `git reset --hard 3071865ccf01`.
+This process needs approx 5GB of free space and have been tested with the [version 3071865ccf01 of analysis-ui](https://github.com/conveyal/analysis-ui/commit/3071865ccf01e1b03011fb3b7a7c2afa81e461ca) (Nov 4, 2020). If you encounter problems, reset to this particular commit: `git reset --hard 3071865ccf01`.
 
 ```
-cd  [the directory where you cloned all the repos, ie the directory at step 1]
+cd [the directory where you cloned all the repos, ie the directory at step 1]
 cp conveyal-analysis-docker/ui/.env analysis-ui/
 cd analysis-ui
-# If you want to customize Mapbox API token you can edit .env file and set NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN
+# If you want to customize the Mapbox API token you can edit the .env file and set NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN
 # in that case you'll also need to remove the line that sets this variable in ../conveyal-analysis-docker/ui/Dockerfile
 docker build -f ../conveyal-analysis-docker/ui/Dockerfile -t analysis-ui:latest .
 cd ../
@@ -99,7 +99,7 @@ cd ../
 
 ### 5. Run the stack
 
-You'll probably need to adapt images tags to use local ones
+You'll probably need to adapt images tags to use local ones.
 
 ```
 cd conveyal-analysis-docker
