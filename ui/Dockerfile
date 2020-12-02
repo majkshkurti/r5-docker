@@ -25,7 +25,7 @@ RUN yarn build
 FROM node:12 as next
 
 WORKDIR /app
-COPY package.json yarn.lock /app/
+COPY --from=build /app/package.json /app/yarn.lock /app/
 RUN yarn add next
 
 
