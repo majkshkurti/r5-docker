@@ -2,9 +2,12 @@
 
 Quick and easy install of Conveyal Analysis on any modern operating system, using Docker.
 
-**Documentation**: [commons.digitaltransport.io/conveyal-analysis-docker/](http://commons.digitaltransport.io/conveyal-analysis-docke:latestr/)
+**Repository**: [git.digitaltransport4africa.org/commons/conveyal-analysis-docker](https://git.digitaltransport4africa.org/commons/conveyal-analysis-docker)  
+**Documentation**: [commons.digitaltransport.io/conveyal-analysis-docker/](http://commons.digitaltransport.io/conveyal-analysis-docker/)
 
 ## Presentation
+
+[Conveyal Analysis](https://www.conveyal.com/analysis/) is a tool used to make public transport scenarios and evaluate them in terms of accessibility, using [OpenStreetMap](http://openstreetmap.org/) data and [GTFS datasets](https://git.digitaltransport4africa.org/data).
 
 [Docker](docker.com) is a tool to run a program in a self-contained container which will work on any operating system.
 
