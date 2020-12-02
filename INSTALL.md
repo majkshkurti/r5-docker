@@ -111,7 +111,7 @@ Finally, you need to rebuild Conveyal Analysis (actually just its user interface
 
 ![](./doc-assets/build.png)
 
-The process will take a little while, keep the window open to make sure it succeeds. When its finished, the terminal window will close itself.
+The process will take a little while, keep the window open to make sure it succeeds. When it's finished, the terminal window will close itself.
 
 Now you can go back to `launch.bat`, using Conveyal Analysis normally and for as long as you want. Enjoy!
 
