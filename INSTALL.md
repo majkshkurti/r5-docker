@@ -48,7 +48,7 @@ Note: You need Docker Desktop for Windows to install and run Conveyal Analysis u
 
 ![](./doc-assets/files.png)
 
-4. Double-click on `conveyal-analysis-windows.bat` and let the program do its thing. This will download and install Conveyal Analysis for the first time on your computer. This may take a while. Closing the windows before it's finished will interrupt the installation.
+4. Double-click on `launch.bat` and let the program do its thing. This will download and install Conveyal Analysis for the first time on your computer. This may take a while. Closing the windows before it's finished will interrupt the installation.
 
 5. Once the installation is finished, [click here](http://localhost:9966/) to open Conveyal Analysis in your browser. It may take a while to load the first time, please be patient.
 
@@ -56,13 +56,13 @@ Note: You need Docker Desktop for Windows to install and run Conveyal Analysis u
 
 ### Use Conveyal Analysis
 
-You can now double-click on `conveyal-analysis-windows.bat` to start Conveyal Analysis again, and anytime you want. (It will be quicker this time since everything is already installed.)
+You can now double-click on `launch.bat` to start Conveyal Analysis again, and anytime you want. (It will be quicker this time since everything is already installed.)
 
 After it's started, don't forget to open Conveyal Analysis in your browser by [clicking here](http://localhost:9966/)!
 
 Note: Always make sure that Docker is running first (the whale logo in the status bar).
 
-For ease of use, we recommend that you create a shortcut on your Windows desktop: right-click on `conveyal-analysis-windows.bat` and click on Send to > Desktop. We also recommend that you bookmark Conveyal Aanlysis in your browser (http://localhost:9966/).
+For ease of use, we recommend that you create a shortcut on your Windows desktop: right-click on `launch.bat` and click on Send to > Desktop. We also recommend that you bookmark Conveyal Aanlysis in your browser (http://localhost:9966/).
 
 ### Go further...
 
