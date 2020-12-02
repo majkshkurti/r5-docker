@@ -77,7 +77,7 @@ VERSION=$(cat build/version.txt)
 # Build Docker image
 docker build -f ../conveyal-analysis-docker/backend/Dockerfile -t analysis-backend:${VERSION%.dirty} --build-arg r5version=$VERSION .
 # Tag this image as "latest"
-docker tag analysis-backend:${VERSION%.dirty} brunetton/analysis-backend:latest
+docker tag analysis-backend:${VERSION%.dirty} jailbreakparis/analysis-backend:latest
 ```
 
 ### 4. Build UI image
