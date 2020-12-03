@@ -11,7 +11,9 @@ Quick and easy install of Conveyal Analysis on any modern operating system, usin
 
 [Docker](docker.com) is a tool to run a program in a self-contained container which will work on any operating system.
 
-This "dockerisation" of Conveyal Analysis was made possible by [Jailbreak](http://jailbreak.paris/) as part of the [Digital Transport for Africa project](http://digitaltransport4africa.org/) funded by [Agence française de développement](https://www.afd.fr/).
+This "dockerisation" of Conveyal Analysis was initiated in 2018 by [Jailbreak](http://jailbreak.paris/) as part of the [Digital Transport for Africa project](http://digitaltransport4africa.org/) funded by [Agence française de développement](https://www.afd.fr/) in partnership with [Fabrique des mobilités](http://lafabriquedesmobilites.fr/). In November 2020, an upgrade was made possible with financial support by [ADEUS](http://www.adeus.org/).
+
+Thanks to Conveyal for creating and maintaining this great piece of software!
 
 ## Run on your system
 
