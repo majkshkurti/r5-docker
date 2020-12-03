@@ -8,13 +8,13 @@ This guide will help you install Conveyal Analysis using Docker.
 
 ### Operating system
 
-#### Windows
+#### Microsoft Windows
 
-[Docker Desktop](https://www.docker.com/products/docker-desktop/) requires [Microsoft Windows 10 64-bit Pro, Enterprise, or Education](https://docs.docker.com/docker-for-windows/install/#system-requirements). ([Windows Home has specific instructions](https://docs.docker.com/docker-for-windows/install-windows-home/).)
+[Docker Desktop](https://www.docker.com/products/docker-desktop/) requires [Windows 10 64-bit Pro, Enterprise, or Education](https://docs.docker.com/docker-for-windows/install/#system-requirements). ([Windows Home has specific instructions](https://docs.docker.com/docker-for-windows/install-windows-home/).)
 
-#### macOS
+#### Apple macOS
 
-[Docker Desktop](https://www.docker.com/products/docker-desktop/) requires [Apple macOS 10.14 or newer](https://docs.docker.com/docker-for-mac/install/#system-requirements).
+[Docker Desktop](https://www.docker.com/products/docker-desktop/) requires [macOS 10.14 or newer](https://docs.docker.com/docker-for-mac/install/#system-requirements).
 
 #### Linux
 
