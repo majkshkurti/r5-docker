@@ -2,7 +2,7 @@
 
 Quick and easy install of Conveyal Analysis on any modern operating system, using Docker.
 
-**Repository**: [git.digitaltransport4africa.org/commons/conveyal-analysis-docker](https://git.digitaltransport4africa.org/commons/conveyal-analysis-docker)
+**Repository**: [git.digitaltransport4africa.org/commons/conveyal-analysis-docker](https://git.digitaltransport4africa.org/commons/conveyal-analysis-docker)  
 **Documentation**: [commons.digitaltransport.io/conveyal-analysis-docker/](http://commons.digitaltransport.io/conveyal-analysis-docker/)
 
 ## Presentation
