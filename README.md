@@ -38,7 +38,7 @@ Docker images built by Jailbreak are hosted on Docker Hub:
 - [`R5`](https://hub.docker.com/r/jailbreakparis/r5) (the backend)
 - [`Analysis-ui`](https://hub.docker.com/r/jailbreakparis/analysis-ui) (the ui)
 
-The following guide is to create new images, typically when a new version of the software is available, or if you want to use a custom Mapbox API key (API key not read at runtime, but added in the UI code at build time).
+The following guide is to create new images, typically when a new version of the software is available, or if you want to use a custom Mapbox API key (API key is not read at runtime, but added in the UI code at build time).
 
 Note that you can independently build backend or ui, you do not need to build both (if local image doesn't exists, `docker-compose` will pull and use image from dockerhub)
 
@@ -94,21 +94,23 @@ docker build -f ../conveyal-analysis-docker/backend/Dockerfile -t jailbreakparis
 docker tag jailbreakparis/r5:${VERSION%.dirty} jailbreakparis/r5:latest
 ```
 
-### 4. Build the Analysis UI image
+### 2. Build the Analysis UI image
 
 This process needs approx 5GB of free space and have been tested with the [version 3071865ccf01 of analysis-ui](https://github.com/conveyal/analysis-ui/commit/3071865ccf01e1b03011fb3b7a7c2afa81e461ca) (Nov 4, 2020). (that particular commit version is hardcoded in ui/Dockerfile).
 
-Before building the ui, you can change `NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN` value in `ui/.env` file to use a custom Mapbox token. For the moment this needs to be done before building the image.
+Before building the ui, you can change `NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN` value in `ui/.env` file to use a custom Mapbox token. For the moment this needs to be done **before building the image**.
 
 To build the analysis-ui using the same version used by Jailbreak to build `jailbreakparis/analysis-ui` image, just run:
 
 ```
-./build-ui.sh
+docker build -f ../conveyal-analysis-docker/ui/Dockerfile -t jailbreakparis/analysis-ui:latest .
 ```
 
-To change the version of analysis-ui used, add `--build-arg COMMIT_SHA=xxxxxxxxx` to the build command used in `build-ui.sh` script (or edit `ui/Dockerfile`).
+If you're running windows, you can use the batch file `rebuild-ui.bat`
 
-### 5. Run the stack
+To change the version of analysis-ui used, add `--build-arg COMMIT_SHA=xxxxxxxxx` to the build command used in rebuild-ui script (or edit `ui/Dockerfile`).
+
+### 3. Run the stack
 
 ```
 cd conveyal-analysis-docker
