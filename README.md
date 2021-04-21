@@ -50,7 +50,7 @@ git clone --depth=1 https://git.digitaltransport4africa.org/commons/conveyal-ana
 
 ### 2. Build the R5 image
 
-### 2.1. CLone R5 source code
+#### 2.1. CLone R5 source code
 
 Image creation have done tested with R5 v6.0.0-19-g6a985e9
 
@@ -94,7 +94,7 @@ docker build -f ../conveyal-analysis-docker/backend/Dockerfile -t jailbreakparis
 docker tag jailbreakparis/r5:${VERSION%.dirty} jailbreakparis/r5:latest
 ```
 
-### 2. Build the Analysis UI image
+### 3. Build the Analysis UI image
 
 This process needs approx 5GB of free space and have been tested with the [version 3071865ccf01 of analysis-ui](https://github.com/conveyal/analysis-ui/commit/3071865ccf01e1b03011fb3b7a7c2afa81e461ca) (Nov 4, 2020). (that particular commit version is hardcoded in ui/Dockerfile).
 
@@ -110,7 +110,7 @@ If you're running windows, you can use the batch file `rebuild-ui.bat`
 
 To change the version of analysis-ui used, add `--build-arg COMMIT_SHA=xxxxxxxxx` to the build command used in rebuild-ui script (or edit `ui/Dockerfile`).
 
-### 3. Run the stack
+### 4. Run the stack
 
 ```
 cd conveyal-analysis-docker
