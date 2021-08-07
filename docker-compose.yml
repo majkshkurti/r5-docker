@@ -1,15 +1,19 @@
-version: '3'
+version: "3"
 services:
   mongodb:
-    container_name: mongo
+    container_name: r5_mongo
     image: mongo:4
     restart: always
     volumes:
       - mongodb-volume:/data/db:rw
 
   backend:
-    container_name: backend
-    image: jailbreakparis/r5:latest
+    container_name: r5_backend
+    image: majkshkurti/r5:latest
+    # !!!!!!!!!!BEFORE BUILDING THE IMAGE PLACE r5.jar file in backend folder!!!!!
+    # build:
+    #   dockerfile: Dockerfile
+    #   context: ./backend
     depends_on:
       - mongodb
     environment:
@@ -24,15 +28,18 @@ services:
       - ./backend/analysis.properties:/app/analysis.properties:ro
 
   ui:
-    container_name: ui
-    image: jailbreakparis/analysis-ui:latest
+    container_name: r5_ui
+    image: majkshkurti/analysis-ui:latest
+    # build:
+    #   dockerfile: ./ui/Dockerfile
+    #   context: .
     depends_on:
       - backend
     ports:
       - "3000:3000"
     links:
       - backend
-    volumes:   # (paths relative to the Compose file)
+    volumes: # (paths relative to the Compose file)
       - .env:/app/.env:ro
 
 volumes:

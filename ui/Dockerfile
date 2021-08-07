@@ -1,7 +1,7 @@
 # Please read README.txt for prerequisites before using this Dockerfile
 
 # Git commit to use
-ARG COMMIT_SHA=3071865ccf01
+ARG COMMIT_SHA=72d88067da78f774959f221094eaa0d20d2aa02c
 
 # Build ───────────────────────────────────────────────────────────────────────
 FROM node:12 as build
