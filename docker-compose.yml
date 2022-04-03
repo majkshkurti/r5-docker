@@ -1,6 +1,6 @@
 version: "3"
 services:
-  mongodb:
+  mongo:
     container_name: r5_mongo
     image: mongo:4
     restart: always
@@ -15,12 +15,12 @@ services:
     #   dockerfile: Dockerfile
     #   context: ./backend
     depends_on:
-      - mongodb
+      - mongo
     environment:
       # https://github.com/ufoscout/docker-compose-wait
-      WAIT_HOSTS: mongodb:27017
+      WAIT_HOSTS: mongo:27017
     links:
-      - mongodb
+      - mongo
     ports:
       - "7070:7070"
       - "7080:7080"
