@@ -27,6 +27,7 @@ services:
       - "7070:7070"
       - "7080:7080"
     volumes:
+      - ./backend/analysis.properties:/app/analysis.properties:ro
       - ./r5:/r5
 
   ui:
