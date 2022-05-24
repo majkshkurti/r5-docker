@@ -10,25 +10,20 @@ services:
       - mongodb-volume:/data/db:rw
 
   backend:
-    container_name: r5_backend
     image: majkshkurti/r5:latest
-    # !!!!!!!!!!BEFORE BUILDING THE IMAGE PLACE r5.jar file in backend folder!!!!!
-    # build:
-    #   dockerfile: Dockerfile
-    #   context: ./backend
+    container_name: backend_r5
     depends_on:
       - mongo
     environment:
-      # https://github.com/ufoscout/docker-compose-wait
       WAIT_HOSTS: mongo:27017
+      JVM_HEAP_GB: 14
     links:
       - mongo
     ports:
       - "7070:7070"
       - "7080:7080"
     volumes:
-      - ./backend/analysis.properties:/app/analysis.properties:ro
-      - ./r5:/r5
+      - ./r5-cache:/r5/cache
 
   ui:
     container_name: r5_ui
