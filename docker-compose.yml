@@ -10,7 +10,7 @@ services:
       - mongodb-volume:/data/db:rw
 
   backend:
-    image: majkshkurti/conveyal-r5:6.4
+    image: majkshkurti/conveyal-r5:6.4-p1
     container_name: backend_r5
     depends_on:
       - mongo
